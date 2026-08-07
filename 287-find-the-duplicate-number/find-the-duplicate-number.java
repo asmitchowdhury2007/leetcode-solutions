@@ -4,8 +4,7 @@ class Solution {
         int fast = 0;
         while(true){
             slow = nums[slow];
-            fast = nums[fast];
-            fast = nums[fast];
+            fast = nums[nums[fast]];
             if(slow==fast){
                 slow = 0;
                 while(slow!=fast){
@@ -16,6 +15,7 @@ class Solution {
             }
             
         }
+        
         
     }
 }
