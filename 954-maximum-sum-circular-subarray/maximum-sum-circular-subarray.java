@@ -20,7 +20,7 @@ class Solution {
         if(max_result<0){
             return max_result;
         }
-        result = Math.max(result,Math.max(max_result,sum-min_result));
+        result = Math.max(max_result,sum-min_result);
         return result;
     }
 }
