@@ -9,12 +9,13 @@ class Solution {
             if(end1>=intervals[i][0]){
                 start1 = start1;
                 end1 = Math.max(end1,intervals[i][1]);
+                continue;
             }
-            else{
-                result.add(Arrays.asList(start1,end1));
-                start1 = intervals[i][0];
-                end1 = intervals[i][1];
-            }
+           
+            result.add(Arrays.asList(start1,end1));
+            start1 = intervals[i][0];
+            end1 = intervals[i][1];
+            
             
         }
         result.add(Arrays.asList(start1,end1));
