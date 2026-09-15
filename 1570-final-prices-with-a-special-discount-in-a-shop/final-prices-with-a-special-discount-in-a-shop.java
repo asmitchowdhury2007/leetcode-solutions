@@ -1,6 +1,5 @@
 class Solution {
     public int[] finalPrices(int[] prices) {
-        int[] discount = new int[prices.length];
         int[] answer = new int[prices.length];
         Stack<Integer> st = new Stack<>();
         for(int i=prices.length-1;i>=0;i--){
@@ -8,16 +7,13 @@ class Solution {
                 st.pop();
             }
             if(st.isEmpty()){
-                discount[i] = 0;
+                answer[i] = prices[i];
                 st.push(prices[i]);
             }
             else{
-                discount[i] = st.peek();
+                answer[i] = prices[i]-st.peek();
                 st.push(prices[i]);
             }
-        }
-        for(int i=0;i<prices.length;i++){
-            answer[i] = prices[i]-discount[i];
         }
         return answer;
     }
