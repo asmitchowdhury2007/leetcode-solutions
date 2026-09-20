@@ -8,8 +8,9 @@ class Solution {
         for(int i=0;i<ransomNote.length();i++){
             if(map1.containsKey(ransomNote.charAt(i))){
                 map2.put(ransomNote.charAt(i),map2.getOrDefault(ransomNote.charAt(i),0)+1);
-                if(map2.get(ransomNote.charAt(i))>map1.get(ransomNote.charAt(i))){
-                    return false;
+                map1.put(ransomNote.charAt(i),map1.get(ransomNote.charAt(i))-1);
+                if(map1.get(ransomNote.charAt(i))==0){
+                    map1.remove(ransomNote.charAt(i));
                 }
             }
             else{
