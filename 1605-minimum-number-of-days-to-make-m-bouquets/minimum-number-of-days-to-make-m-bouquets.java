@@ -22,7 +22,7 @@ class Solution {
             for(int i=0;i<bloomDay.length;i++){
                 if(bloomDay[i]<=mid){
                     if(is_included==false){
-                        adjacent_count = 1;
+                        adjacent_count++;
                         is_included=true;
                     }
                     else{
