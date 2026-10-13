@@ -18,12 +18,12 @@ class Solution {
             int mid = (low+high)/2;
             int bouquet_count = 0;
             int adjacent_count = 0;
-            boolean is_included = false;
+            boolean is_adjacent_included = false;
             for(int i=0;i<bloomDay.length;i++){
                 if(bloomDay[i]<=mid){
-                    if(is_included==false){
+                    if(is_adjacent_included==false){
                         adjacent_count++;
-                        is_included=true;
+                        is_adjacent_included=true;
                     }
                     else{
                         adjacent_count++;
@@ -34,7 +34,7 @@ class Solution {
                     }
                 }
                 else{
-                    is_included=false;
+                    is_adjacent_included=false;
                     adjacent_count = 0;
                 }
             }
